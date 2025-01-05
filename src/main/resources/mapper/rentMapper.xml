@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.fastcampus.finalproject.dao.rentMapper">
+	<resultMap type="com.fastcampus.finalproject.domain.Member" id="Member">
+		<result property="cust_no" column="cust_no" />
+		<result property="cust_name" column="cust_name" />
+		<result property="join_date" column="join_date" />
+		<result property="cust_email" column="cust_email" />
+		<result property="grade" column="grade" />		
+	</resultMap>
+	<resultMap type="com.fastcampus.finalproject.domain.Rent" id="Rent">
+		<result property="cust_no" column="cust_no" />
+		<result property="rent_no" column="rent_no" />
+		<result property="book_code" column="book_code" />
+		<result property="rent_price" column="rent_price" />
+		<result property="rent_date" column="rent_date" />		
+	</resultMap>
+	<resultMap type="com.fastcampus.finalproject.domain.MemberRent" id="MemberRent">
+		<result property="cust_no" column="cust_no" />
+		<result property="cust_name" column="cust_name" />
+		<result property="grade" column="grade" />		
+		<result property="rent_price" column="rent_price" />
+	</resultMap>
+    <select id="selectAll" resultType="Rent">
+        SELECT cust_no, rent_no, book_code, rent_price, DATE_FORMAT(rent_date, '%Y-%m-%d') AS rent_date
+        FROM rent_tbl
+        ORDER BY rent_no ASC
+    </select>
+    <select id="selectBill" resultType="MemberRent">
+    	SELECT B.cust_no AS cust_no, B.cust_name AS cust_name, B.grade AS grade, SUM(A.rent_price) AS rent_price
+		FROM book.rent_tbl AS A
+			INNER JOIN book.member_tbl AS B
+					ON A.cust_no = B.cust_no
+		GROUP BY cust_no, cust_name, grade
+		ORDER BY rent_price DESC;
+    </select>
+</mapper>

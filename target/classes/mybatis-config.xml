@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+		PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+		"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<typeAliases>
+		<typeAlias alias="Member" type="com.fastcampus.finalproject.domain.Member"/>
+		<typeAlias alias="Rent" type="com.fastcampus.finalproject.domain.Rent"/>
+		<typeAlias alias="MemberRent" type="com.fastcampus.finalproject.domain.MemberRent"/>
+	</typeAliases>
+</configuration>

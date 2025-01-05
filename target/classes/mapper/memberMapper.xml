@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.fastcampus.finalproject.dao.memberMapper">
+	<select id="count" resultType="int">
+        SELECT MAX(cust_no) FROM member_tbl
+    </select>
+    <select id="selectAll" resultType="Member">
+        SELECT cust_no, cust_name, phone, DATE_FORMAT(join_date,'%Y-%m-%d') AS join_date, cust_email, grade
+        FROM member_tbl
+        ORDER BY cust_no ASC
+    </select>
+    <select id="select" parameterType="Integer" resultType="Member">
+        SELECT cust_no, cust_name, phone, join_date, cust_email, grade
+        FROM member_tbl
+        WHERE cust_no = #{cust_no}
+    </select>
+    <insert id="insert" parameterType="Member" useGeneratedKeys="true" keyProperty="cust_no">
+        INSERT INTO member_tbl (cust_no, cust_name, phone, join_date, cust_email, grade)
+        VALUES (#{cust_no}, #{cust_name}, #{phone}, #{join_date}, #{cust_email}, #{grade})
+    </insert>
+    <update id="update" parameterType="Member">
+        UPDATE member_tbl
+        SET cust_name = #{cust_name}
+          , phone = #{phone}
+          , cust_email = #{cust_email}
+          , grade = #{grade}
+        WHERE cust_no = #{cust_no}
+    </update>
+</mapper>

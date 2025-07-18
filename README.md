@@ -1,7 +1,8 @@
-## 📚 도서 고객 및 대여관리 프로그램
+### 📚 FastCampus Final Project
+>이 프로젝트는 Java & Spring 기반으로 구현한 도서 고객 및 대여관리 시스템입니다.\
+>고객, 도서, 대여 이력을 효율적으로 관리할 수 있는 관리자용 백오피스 시스템을 목표로 설계되어 개발되었습니다.
 
-Java & Spring 기반으로 구현한 도서 고객 및 대여관리 시스템입니다.\
-고객, 도서, 대여 이력을 효율적으로 관리할 수 있는 관리자용 백오피스 시스템을 목표로 설계되어 개발되었습니다.
+<br/> 
 
 ### 프로젝트 개요
 
@@ -63,7 +64,16 @@ src
 - [📹 프로젝트 시연 영상](https://drive.google.com/file/d/1A_mZZJVEqI9ZJ8qaShR_z1oGT-F7Nzy-/view?usp=sharing)
 - [📄 프로젝트 가이드](https://drive.google.com/file/d/12JI6BsJtunJglMgsbOxcySADOPbSrvq2/view?usp=sharing)
 
-&nbsp;
+</br>
+
+#### 🙋‍♀️ 만든 사람
+
+- 👩‍💻 이름: 양수영 (Yang Sooyoung)
+- 🔗 GitHub: [@Yang-Sooyoung](https://github.com/Yang-Sooyoung)
+
+<br/>
+
+
 ---
 
 > 💬 본 프로젝트는 FastCampus Java & Spring 백엔드 과정의 최종 과제로 제작되었습니다.\
